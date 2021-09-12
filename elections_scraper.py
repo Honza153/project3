@@ -4,6 +4,7 @@ from tkinter import scrolledtext
 from bs4 import BeautifulSoup
 import volby as vlb
 import csv
+import sys
 
 lst = list()
 lst_url = list()
@@ -45,26 +46,35 @@ def saveData(lt):
         f_writer.writerow(lst_head)
         f_writer.writerows(lst_dataAll)
 
+def deleteEntry(z1,z2):
+    z1.delete(0,END)
+    z2.delete(0, END)
+
+
 
 def main():
     okno=Tk()
-    okno.title("Project 3 - scrapování")
+    okno.title("Projekt3: Elections Scraper")
     okno.option_add('*Font', 'Verdana 10')
-    okno.geometry("800x400+100+100")
+    okno.geometry("1100x400+100+100")
     Label(okno, text=u"Zadej url: ").grid(row=0, sticky=W)
     Label(okno, text=u"Zadej název výst.souboru:   ").grid(row=1, sticky=W)
-    url_str = Entry(okno,width=50)
+    url_str = Entry(okno,width=70)
     name_str= Entry(okno)
-    url_str.grid(row=0, column=0,pady = 5, padx = 50)
-    name_str.grid(row=1, column=0,pady = 5, padx = 50)
-    text_area = scrolledtext.ScrolledText(okno,width=100,height=10,font=("calibre",10))
-    text_area.grid(row=3,column=0,pady = 10, padx = 10)
+    url_str.grid(row=0, column=1,columnspan=10,pady = 5 )
+    name_str.grid(row=1, column=1,pady = 5)
+    text_area = scrolledtext.ScrolledText(okno,width=150,height=10,font=("calibre",10))
+    text_area.grid(row=3,column=0,columnspan=30, rowspan=4,pady = 10, padx = 10)
     b = Button(okno,text="Zadej data",command=lambda: [(inData(url_str,name_str),correctURL())])
-    b.grid(row=4, column=0,pady = 5, padx = 10)
+    b.grid(row=8, column=0,pady = 5, padx = 10)
     c = Button(okno, text="Načti data", command=lambda: showDataAll(text_area,getCityData()))
-    c.grid(row=5, column=0,pady = 5, padx = 5)
+    c.grid(row=9, column=0,pady = 5, padx = 5)
     d = Button(okno, text="Ulož data", command=lambda: saveData(getCityData()))
-    d.grid(row=6, column=0, pady=5, padx=5)
+    d.grid(row=10, column=0, pady=5, padx=5)
+    e = Button(okno, text="Vymaž data", command=lambda: deleteEntry(url_str,name_str))
+    e.grid(row=8, column=1, pady=5, padx=5)
+    f = Button(okno, text="Ukončit", command=lambda: sys.exit(0))
+    f.grid(row=9, column=1, pady=5, padx=5)
 
     mainloop()
 
