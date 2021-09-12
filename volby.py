@@ -43,9 +43,9 @@ def getVoteData(lst:list)-> list:
         txt = sp.find("td", {'headers': 'sa6'}).text
         hlasy = txt.replace('\xa0', " ")
         lst_strany = list()
-        for td in sp.find_all('td', {'headers': 't1sa1 t1sb2'}):
+        for td in sp.find_all('td', {'headers': 't1sa2 t1sb3'}):
             lst_strany.append(td.text)
-        for td in sp.find_all('td', {'headers': 't2sa1 t2sb2'}):
+        for td in sp.find_all('td', {'headers': 't2sa2 t2sb3'}):
             lst_strany.append(td.text)
         #lst_strany.remove('-')
         sub_data = [lst[i][0],lst[i][1],volici,obalky,hlasy,lst_strany]

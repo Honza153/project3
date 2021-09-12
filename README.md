@@ -39,4 +39,7 @@ button «Ulož data» - slouží k uložení dat do pracovního prostředí uži
 button «Vymaž vstup» - slouží k vymazání zadaných dat = argumentů
 button «Ukončit» - slouží k ukončení aplikace
 
-512974	Bělá	559	379	375	['Občanská demokratická strana', 'Řád národa - Vlastenecká unie', 'CESTA ODPOVĚDNÉ SPOLEČNOSTI', 'Česká str.sociálně demokrat.', 'Radostné Česko', 'STAROSTOVÉ A NEZÁVISLÍ', 'Komunistická str.Čech a Moravy', 'Strana zelených', 'ROZUMNÍ-stop migraci,diktát.EU', 'Strana svobodných občanů', 'Blok proti islam.-Obran.domova', 'Občanská demokratická aliance', 'Česká pirátská strana', 'Česká národní fronta', 'Referendum o Evropské unii', 'TOP 09', 'ANO 2011', 'Dobrá volba 2016', 'SPR-Republ.str.Čsl. M.Sládka', 'Křesť.demokr.unie-Čs.str.lid.', 'Česká strana národně sociální', 'REALISTÉ', 'SPORTOVCI', 'Dělnic.str.sociální spravedl.', 'Svob.a př.dem.-T.Okamura (SPD)', 'Strana Práv Občanů']
+kód obce	název obce	voliči v seznamu	vydané obálky	platné hlasy	kandidující strany	
+512974	Bělá	559	379	375	['22', '0', '0', '27', '1', '9', '15', '3', '8', '5', '1', '1', '18', '0', '1', '15', '150', '0', '1', '30', '0', '3', '0', '1', '63', '1']	
+506192	Bohuslavice	1 380	908	905	['48', '3', '1', '48', '0', '20', '32', '3', '6', '9', '1', '2', '82', '0', '1', '47', '349', '0', '0', '141', '0', '3', '1', '0', '106', '2']	
+506214	Bolatice	3 533	2 309	2 292	['99', '1', '3', '126', '1', '41', '101', '18', '11', '25', '1', '0', '165', '0', '0', '417', '844', '1', '4', '125', '0', '7', '4', '3', '290', '5']
