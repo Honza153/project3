@@ -71,7 +71,7 @@ def main():
     c.grid(row=9, column=0,pady = 5, padx = 5)
     d = Button(okno, text="Ulož data", command=lambda: saveData(getCityData()))
     d.grid(row=10, column=0, pady=5, padx=5)
-    e = Button(okno, text="Vymaž data", command=lambda: deleteEntry(url_str,name_str))
+    e = Button(okno, text="Vymaž vstup", command=lambda: deleteEntry(url_str,name_str))
     e.grid(row=8, column=1, pady=5, padx=5)
     f = Button(okno, text="Ukončit", command=lambda: sys.exit(0))
     f.grid(row=9, column=1, pady=5, padx=5)
