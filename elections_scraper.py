@@ -9,7 +9,6 @@ import sys
 lst = list()
 lst_url = list()
 lst_dataAll = list()
-lst_dataAll1 = list()
 lst_head = ["kód obce","název obce","voliči v seznamu","vydané obálky","platné hlasy","kandidující strany"]
 
 def inData(zdr1,zdr2):
@@ -40,7 +39,8 @@ def showDataAll(zdr,lt):
     zdr.insert(END,lst_dataAll)
 
 def saveData(lt):
-    lst_dataAll = vlb.getVoteData(lt)
+    lst_dataAll,ltnazvy = vlb.getVoteData(lt)
+    lst_head.extend(ltnazvy)
     with open(lst[1]+".csv", "wt") as f :
         f_writer = csv.writer(f, delimiter=";")
         f_writer.writerow(lst_head)
@@ -49,6 +49,9 @@ def saveData(lt):
 def deleteEntry(z1,z2):
     z1.delete(0,END)
     z2.delete(0, END)
+
+def disBut(zdroj):
+    zdroj["state"] = DISABLED
 
 
 
@@ -67,9 +70,9 @@ def main():
     text_area.grid(row=3,column=0,columnspan=30, rowspan=4,pady = 10, padx = 10)
     b = Button(okno,text="Zadej data",command=lambda: [(inData(url_str,name_str),correctURL())])
     b.grid(row=8, column=0,pady = 5, padx = 10)
-    c = Button(okno, text="Načti data", command=lambda: showDataAll(text_area,getCityData()))
+    c = Button(okno, text="Načti data", command=lambda: [showDataAll(text_area,getCityData()),disBut(b)])
     c.grid(row=9, column=0,pady = 5, padx = 5)
-    d = Button(okno, text="Ulož data", command=lambda: saveData(getCityData()))
+    d = Button(okno, text="Ulož data", command=lambda: [saveData(getCityData()),disBut(c) ])
     d.grid(row=10, column=0, pady=5, padx=5)
     e = Button(okno, text="Vymaž vstup", command=lambda: deleteEntry(url_str,name_str))
     e.grid(row=8, column=1, pady=5, padx=5)
