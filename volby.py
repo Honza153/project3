@@ -55,7 +55,7 @@ def getVoteData(lst:list)-> list:
 
     sp1 = downloadPage(lst[0][2])
     for td in sp1.find_all("td",headers = ['t1sa1 t1sb2','t2sa1 t2sb2']):
-        nazvy_stran.append(td.text)
+        nazvy_stran.append(td.text) 
 
     return data_all,nazvy_stran
 
